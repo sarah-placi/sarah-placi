@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -19,17 +19,30 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link rel="icon" type="image/png" href="favicon.ico"/>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -42,38 +55,11 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -81,58 +67,68 @@ h6 {
   margin-left: auto;
   margin-right: auto;
 }
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
-}
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
 }
+.html-widget {
+  margin-bottom: 20px;
+}
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
 }
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
+.dropdown-submenu {
+  position: relative;
 }
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
 }
-
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
 }
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
 }
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
 }
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu.pull-left {
+  float: none;
 }
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -143,26 +139,93 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
-
-
-<div class="container-fluid main-container">
 
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
 
 
 
@@ -196,7 +259,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -221,13 +284,13 @@ Research Scientist in the field of Comparative Cognition at the Center for Mind/
 </div>
 <div class="column-right">
 <h1 id="about-me">About me</h1>
-<p>I am a post-doctoral researcher at the Center for Mind/Brain Sciences (CIMeC - University of Trento) working in the <a href="https://r.unitn.it/en/cimec/abc/abc-team-members">Animal Brain &amp; Cognition group (ABC group)</a> of the <a href="https://www.cimec.unitn.it/en/44/animal-cognition-and-neuroscience-laboratory-acn-lab">Animal Cognition and Neuroscience lab (ACN lab)</a>. I am interested in the cognitive tools animals – including humans – evolved to deal with the uncertainty of their physical and social environment, and in how these cognitive tools help them learn and make rational decisions. I am currently investigating probability intuitions in newly-hatched chicks and young human children.</p>
-<p>On this website you can find my <a href="cv/PLACI_CV.pdf">CV</a> as well as up-to-date information about my academic projects and achievements, i.e. my <a href="#publications">publication list</a> and recent/ upcoming presentations.</p>
+<p>I am a post-doctoral researcher at the Center for Mind/Brain Sciences (CIMeC - University of Trento) working in the <a href="https://r.unitn.it/en/cimec/abc/abc-team-members">Animal Brain &amp; Cognition group (ABC group)</a> of the <a href="https://www.cimec.unitn.it/en/44/animal-cognition-and-neuroscience-laboratory-acn-lab">Animal Cognition and Neuroscience lab (ACN lab)</a>. I am interested in the cognitive tools animals -- including humans -- evolved to deal with the uncertainty of their physical and social environment, and in how these cognitive tools help them learn and make rational decisions. I am currently investigating probability intuitions in newly-hatched chicks and young human children as well as the formation of geometry categories in human adults and newly-hatched chicks.</p>
+<p>On this website you can find my <a href="cv/PLACI_CV.pdf">CV</a> as well as up-to-date information about my academic projects and achievements, i.e. my <a href="#publications">publication list</a> and recent/ upcoming presentations.</p>
 <h3 id="interests">Interests</h3>
 <ul>
 <li>Animal Cognition</li>
-<li>Probabilistic Reasoning</li>
-<li>Human Cooperation</li>
+<li>Learning and reasoning</li>
+<li>Categorization</li>
 </ul>
 <h3 id="education">Education</h3>
 <ul>
@@ -249,7 +312,7 @@ Research Scientist in the field of Comparative Cognition at the Center for Mind/
 <div id="section" class="section level2">
 <h2>2019</h2>
 <ul>
-<li><p><strong>Probability intuitions in human and nonhuman animals</strong> (Upcoming talk at the <a href="https://www.mpib-berlin.mpg.de/research/research-groups/mprg-isearch">MPRG iSearch</a>, November 2020, Berlin)</p></li>
+<li><p><strong>Probability intuitions in human and nonhuman animals</strong> (Talk given at the <a href="https://www.mpib-berlin.mpg.de/research/research-groups/mprg-isearch">MPRG iSearch</a>, November 2020, Berlin)</p></li>
 <li><p><strong>Probability intuitions in human children and nonhuman animals</strong> (Talk given at the <a href="https://www.cimec.unitn.it/">CIMeC</a>, July 2019, Rovereto)</p></li>
 </ul>
 <hr />
@@ -259,6 +322,7 @@ Research Scientist in the field of Comparative Cognition at the Center for Mind/
 <div id="publications" class="section level1">
 <h1>Publications<a name="publications"></a></h1>
 <ul>
+<li><p>Stephan, S., <strong>Placì, S.</strong>, Waldmann, M. (2021). Evaluating General versus Singular Causal Prevention. <font style="color:grey;">PsyArXiv.</font> <a href="https://psyarxiv.com/c29sm/"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
 <li><p><strong>Placì, S.</strong>, Fischer, J., &amp; Rakoczy, H. (2020). Do infants and preschoolers quantify probabilities based on proportions? <font style="color:grey;">Royal Society Open Science.</font> <a href="https://royalsocietypublishing.org/doi/pdf/10.1098/rsos.191751"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
 <li><p>Farrar, B., Altschul, D., Fischer, J., Van der Mescht, J., <strong>Placì, S.</strong>, Troisi, C.A., Vernouillet, A., Clayton, N.S., &amp; Ostojic, L. (2020). Trialling Meta-Research in Comparative Cognition: Claims and Statistical Inference in Animal Physical Cognition. <font style="color:grey;">Animal Behavior and Cognition.</font> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115978/pdf/EMS90678.pdf"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
 <li><p><strong>Placì, S.</strong>, Padberg, M., Rakoczy, H. &amp; Fischer, J. (2019). Long-tailed macaques extract statistical information from repeated types of events to make rational decisions under uncertainty. <font style="color:grey;">Scientific Reports.</font> <a href="https://www.researchgate.net/publication/335271929_Long-tailed_macaques_extract_statistical_information_from_repeated_types_of_events_to_make_rational_decisions_under_uncertainty"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
@@ -278,7 +342,7 @@ Research Scientist in the field of Comparative Cognition at the Center for Mind/
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -286,6 +350,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
