@@ -13,7 +13,8 @@
 
 <title>Sarah Placì</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -57,6 +58,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="styles.css" type="text/css" />
 
 
@@ -81,6 +83,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -233,7 +238,7 @@ $(document).ready(function () {
 <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -277,55 +282,114 @@ $(document).ready(function () {
 Sarah Placì
 </h2>
 <p style="color:grey;">
-Research Scientist in the field of Comparative Cognition at the Center for Mind/Brain Sciences (University of Trento)
+Research Scientist in the field of Comparative Cognition at the Center
+for Mind/Brain Sciences (University of Trento)
 </p>
-<a href="mailto:sarah.placi@unitn.it"><img src="images/home/mail_icon.PNG"></a> <!--[<img src="images/home/github_icon.PNG">](https://github.com/SimonStephan31)--> <a href="https://twitter.com/PlaciSarah"><img src="images/home/twitter_icon.PNG"></a> <a href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=7uPERrwAAAAJ&amp;gmla=AJsN-F4eU6JMQc9QcNVsUslklGfq0I2sHyV7I9L6KH1jJ6aJ1chwCfuxRQ4GmepxQVZGpEh0M7nXYOmfqzBIfWjm_iCmcyAkJ39wH8dZxSW5gGNB48l9tWA"><img src="images/home/scholar_icon.PNG"></a>
+<a
+href="mailto:sarah.placi@unitn.it"><img src="images/home/mail_icon.PNG"></a>
+<!--[<img src="images/home/github_icon.PNG">](https://github.com/SimonStephan31)-->
+<a
+href="https://twitter.com/PlaciSarah"><img src="images/home/twitter_icon.PNG"></a>
+<a
+href="https://scholar.google.com/citations?view_op=list_works&amp;hl=en&amp;user=7uPERrwAAAAJ&amp;gmla=AJsN-F4eU6JMQc9QcNVsUslklGfq0I2sHyV7I9L6KH1jJ6aJ1chwCfuxRQ4GmepxQVZGpEh0M7nXYOmfqzBIfWjm_iCmcyAkJ39wH8dZxSW5gGNB48l9tWA"><img src="images/home/scholar_icon.PNG"></a>
 </center>
 </div>
-<div class="column-right">
-<h1 id="about-me">About me</h1>
-<p>I am a post-doctoral researcher at the Center for Mind/Brain Sciences (CIMeC - University of Trento) working in the <a href="https://r.unitn.it/en/cimec/abc/abc-team-members">Animal Brain &amp; Cognition group (ABC group)</a> of the <a href="https://www.cimec.unitn.it/en/44/animal-cognition-and-neuroscience-laboratory-acn-lab">Animal Cognition and Neuroscience lab (ACN lab)</a> and in the <a href="https://www.cimec.unitn.it/en/529/reasoning-and-decision-group-rad">Reasoning &amp; Decision group (RAD)</a>. I am interested in the cognitive tools animals -- including humans -- evolved to deal with the uncertainty of their physical and social environment, and in how these cognitive tools help them learn and make rational decisions. I am currently investigating probability intuitions in newly-hatched chicks and young human children as well as the formation of geometry categories in human adults and newly-hatched chicks.</p>
-<p>On this website you can find my <a href="cv/PLACI_CV.pdf">CV</a> as well as up-to-date information about my academic projects and achievements, i.e. my <a href="#publications">publication list</a> and recent/ upcoming presentations.</p>
-<h3 id="interests">Interests</h3>
+<div id="about-me" class="section level1 column-right">
+<h1>About me</h1>
+<p>I am a post-doctoral researcher at the Center for Mind/Brain Sciences
+(CIMeC - University of Trento) working in the <a
+href="https://r.unitn.it/en/cimec/abc/abc-team-members">Animal Brain
+&amp; Cognition group (ABC group)</a> of the <a
+href="https://www.cimec.unitn.it/en/44/animal-cognition-and-neuroscience-laboratory-acn-lab">Animal
+Cognition and Neuroscience lab (ACN lab)</a> and in the <a
+href="https://www.cimec.unitn.it/en/529/reasoning-and-decision-group-rad">Reasoning
+&amp; Decision group (RAD)</a>. I am interested in the cognitive tools
+animals – including humans – evolved to deal with the uncertainty of
+their physical and social environment, and in how these cognitive tools
+help them learn and make rational decisions. I am currently
+investigating probability intuitions in newly-hatched chicks and young
+human children as well as the formation of geometry categories in human
+adults and newly-hatched chicks.</p>
+<p>On this website you can find my <a href="cv/PLACI_CV.pdf">CV</a> as
+well as up-to-date information about my academic projects and
+achievements, i.e. my <a href="#publications">publication list</a> and
+recent/ upcoming presentations.</p>
+<div id="interests" class="section level3">
+<h3>Interests</h3>
 <ul>
 <li>Animal Cognition</li>
 <li>Learning and reasoning</li>
 <li>Categorization</li>
 </ul>
-<h3 id="education">Education</h3>
+</div>
+<div id="education" class="section level3">
+<h3>Education</h3>
 <ul>
-<li>PhD in Behaviour and Cognition, 2019 <font style="color:grey;">University of Göttingen</font></li>
-<li>MSc in Behaviour, Evolution and Conservation, 2014 <font style="color:grey;">University of Lausanne</font></li>
-<li>BSc in Biology, 2012 <font style="color:grey;">University of Neuchâtel</font></li>
+<li>PhD in Behaviour and Cognition, 2019
+<font style="color:grey;">University of Göttingen</font></li>
+<li>MSc in Behaviour, Evolution and Conservation, 2014
+<font style="color:grey;">University of Lausanne</font></li>
+<li>BSc in Biology, 2012 <font style="color:grey;">University of
+Neuchâtel</font></li>
 </ul>
-<h3 id="honors-awards-fellowships">Honors &amp; Awards &amp; Fellowships</h3>
+</div>
+<div id="honors-awards-fellowships" class="section level3">
+<h3>Honors &amp; Awards &amp; Fellowships</h3>
 <ul>
-<li>Postdoc.Mobility fellowship (SNSF) <font style="color:grey;">(2022)</font></li>
-<li>Early Postdoc.Mobility fellowship (SNSF) <font style="color:grey;">(2020)</font></li>
-<li>RTG2070 Kick-start fund for female Ph.D <font style="color:grey;">(2019)</font></li>
+<li>Postdoc.Mobility fellowship (SNSF)
+<font style="color:grey;">(2022)</font></li>
+<li>Early Postdoc.Mobility fellowship (SNSF)
+<font style="color:grey;">(2020)</font></li>
+<li>RTG2070 Kick-start fund for female Ph.D
+<font style="color:grey;">(2019)</font></li>
 </ul>
+</div>
 </div>
 </div>
 <p><br></p>
 <hr />
-<div id="recent-and-upcoming-talks-conference-presentations" class="section level1">
+<div id="recent-and-upcoming-talks-conference-presentations"
+class="section level1">
 <h1>Recent and upcoming Talks &amp; Conference Presentations</h1>
 <div id="section" class="section level2">
-<h2>2021</h2>
+<h2>2022</h2>
 <ul>
-<li>Poster presentation [virtual] given at <a href="https://harvardwiptips.wordpress.com/">TiPs</a>: <strong>When Euclid needs Newton: intuitive physics underlies sensitivity to geometry</strong> (November 2021, Harvard, MA)</li>
+<li>Flash Talk given at [CogSci2022]: <strong>When Newton beats Euclid:
+intuitive physics underlies sensitivity to geometry</strong> (July 2022,
+Toronto [remote])</li>
 </ul>
 </div>
 <div id="section-1" class="section level2">
-<h2>2020</h2>
+<h2>2022</h2>
 <ul>
-<li>Talk [virtual] given at the <a href="https://www.mpib-berlin.mpg.de/research/research-groups/mprg-isearch">MPRG iSearch</a>: <strong>Probability intuitions in human and nonhuman animals</strong> (November 2020, Berlin)</li>
+<li>Talk given at [SPP &amp; ESPP]: <strong>The importance of gravity in
+minds’ sensitivity to geometry</strong> (July 2022, Milan, Italy)</li>
 </ul>
 </div>
 <div id="section-2" class="section level2">
+<h2>2021</h2>
+<ul>
+<li>Poster presentation [virtual] given at <a
+href="https://harvardwiptips.wordpress.com/">TiPs</a>: <strong>When
+Euclid needs Newton: intuitive physics underlies sensitivity to
+geometry</strong> (November 2021, Harvard, MA)</li>
+</ul>
+</div>
+<div id="section-3" class="section level2">
+<h2>2020</h2>
+<ul>
+<li>Talk [virtual] given at the <a
+href="https://www.mpib-berlin.mpg.de/research/research-groups/mprg-isearch">MPRG
+iSearch</a>: <strong>Probability intuitions in human and nonhuman
+animals</strong> (November 2020, Berlin)</li>
+</ul>
+</div>
+<div id="section-4" class="section level2">
 <h2>2019</h2>
 <ul>
-<li>Talk given at the <a href="https://www.cimec.unitn.it/">CIMeC</a>: <strong>Probability intuitions in human children and nonhuman animals</strong> (July 2019, Rovereto)</li>
+<li>Talk given at the <a href="https://www.cimec.unitn.it/">CIMeC</a>:
+<strong>Probability intuitions in human children and nonhuman
+animals</strong> (July 2019, Rovereto)</li>
 </ul>
 <hr />
 <p><br></p>
@@ -334,14 +398,53 @@ Research Scientist in the field of Comparative Cognition at the Center for Mind/
 <div id="publications" class="section level1">
 <h1>Publications<a name="publications"></a></h1>
 <ul>
-<li><p><strong>Placì, S.</strong>, Stephan, S., Waldmann, M. &amp; Vallortigara G. (2021). When Newton beats Euclid: intuitive physics underlies sensitivity to geometry. <font style="color:grey;">PsyArXiv.</font> <a href="https://psyarxiv.com/78syx/"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p>Stephan, S., <strong>Placì, S.</strong>, Waldmann, M. (2021). Evaluating General versus Singular Causal Prevention. <font style="color:grey;">PsyArXiv.</font> <a href="https://psyarxiv.com/c29sm/"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p><strong>Placì, S.</strong>, Fischer, J., &amp; Rakoczy, H. (2020). Do infants and preschoolers quantify probabilities based on proportions? <font style="color:grey;">Royal Society Open Science.</font> <a href="https://royalsocietypublishing.org/doi/pdf/10.1098/rsos.191751"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p>Farrar, B., Altschul, D., Fischer, J., Van der Mescht, J., <strong>Placì, S.</strong>, Troisi, C.A., Vernouillet, A., Clayton, N.S., &amp; Ostojic, L. (2020). Trialling Meta-Research in Comparative Cognition: Claims and Statistical Inference in Animal Physical Cognition. <font style="color:grey;">Animal Behavior and Cognition.</font> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115978/pdf/EMS90678.pdf"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p><strong>Placì, S.</strong>, Padberg, M., Rakoczy, H. &amp; Fischer, J. (2019). Long-tailed macaques extract statistical information from repeated types of events to make rational decisions under uncertainty. <font style="color:grey;">Scientific Reports.</font> <a href="https://www.researchgate.net/publication/335271929_Long-tailed_macaques_extract_statistical_information_from_repeated_types_of_events_to_make_rational_decisions_under_uncertainty"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p><strong>Placì, S.</strong>, Eckert, J., Rakoczy, H. &amp; Fischer, J. (2018). Long-tailed macaques ( Macaca fascicularis ) can use simple heuristics but fail at drawing statistical inferences from populations to samples. <font style="color:grey;">Royal Society Open Science.</font> <a href="https://www.researchgate.net/publication/327596043_Long-tailed_macaques_Macaca_fascicularis_can_use_simple_heuristics_but_fail_at_drawing_statistical_inferences_from_populations_to_samples"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p>McClung, J. S., <strong>Placì, S.</strong>, Bangerter, A., Clément, F., &amp; Bshary, R. (2017). The language of cooperation: Shared intentionality drives variation in helping as a function of group membership. <font style="color:grey;">Proceedings of the Royal Society B: Biological Sciences.</font> <a href="https://www.researchgate.net/publication/319942345_The_language_of_cooperation_Shared_intentionality_drives_variation_in_helping_as_a_function_of_group_membership"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
-<li><p>Dos Santos, M., <strong>Placì, S.</strong>, &amp; Wedekind, C. (2015). Stochasticity in economic losses increases the value of reputation in indirect reciprocity. <font style="color:grey;">Scientific Reports.</font> <a href="https://www.researchgate.net/publication/286897806_Stochasticity_in_economic_losses_increases_the_value_of_reputation_in_indirect_reciprocity"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p><strong>Placì, S.</strong> (2022). Sensitivity to geometry in
+humans and other animals.
+<font style="color:grey;">In&amp;Vertebrates.</font> <a
+href="https://inandsight.science/journal/papers/6246df15c471ed0d64354815#reviews"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p><strong>Placì, S.</strong>, Stephan, S., Waldmann, M. &amp;
+Vallortigara G. (2021). When Newton beats Euclid: intuitive physics
+underlies sensitivity to geometry.
+<font style="color:grey;">PsyArXiv.</font> <a
+href="https://psyarxiv.com/78syx/"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p>Stephan, S., <strong>Placì, S.</strong>, Waldmann, M. (2021).
+Evaluating General versus Singular Causal Prevention.
+<font style="color:grey;">PsyArXiv.</font> <a
+href="https://psyarxiv.com/c29sm/"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p><strong>Placì, S.</strong>, Fischer, J., &amp; Rakoczy, H.
+(2020). Do infants and preschoolers quantify probabilities based on
+proportions? <font style="color:grey;">Royal Society Open
+Science.</font> <a
+href="https://royalsocietypublishing.org/doi/pdf/10.1098/rsos.191751"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p>Farrar, B., Altschul, D., Fischer, J., Van der Mescht, J.,
+<strong>Placì, S.</strong>, Troisi, C.A., Vernouillet, A., Clayton,
+N.S., &amp; Ostojic, L. (2020). Trialling Meta-Research in Comparative
+Cognition: Claims and Statistical Inference in Animal Physical
+Cognition. <font style="color:grey;">Animal Behavior and
+Cognition.</font> <a
+href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7115978/pdf/EMS90678.pdf"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p><strong>Placì, S.</strong>, Padberg, M., Rakoczy, H. &amp;
+Fischer, J. (2019). Long-tailed macaques extract statistical information
+from repeated types of events to make rational decisions under
+uncertainty. <font style="color:grey;">Scientific Reports.</font> <a
+href="https://www.researchgate.net/publication/335271929_Long-tailed_macaques_extract_statistical_information_from_repeated_types_of_events_to_make_rational_decisions_under_uncertainty"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p><strong>Placì, S.</strong>, Eckert, J., Rakoczy, H. &amp;
+Fischer, J. (2018). Long-tailed macaques ( Macaca fascicularis ) can use
+simple heuristics but fail at drawing statistical inferences from
+populations to samples. <font style="color:grey;">Royal Society Open
+Science.</font> <a
+href="https://www.researchgate.net/publication/327596043_Long-tailed_macaques_Macaca_fascicularis_can_use_simple_heuristics_but_fail_at_drawing_statistical_inferences_from_populations_to_samples"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p>McClung, J. S., <strong>Placì, S.</strong>, Bangerter, A.,
+Clément, F., &amp; Bshary, R. (2017). The language of cooperation:
+Shared intentionality drives variation in helping as a function of group
+membership. <font style="color:grey;">Proceedings of the Royal Society
+B: Biological Sciences.</font> <a
+href="https://www.researchgate.net/publication/319942345_The_language_of_cooperation_Shared_intentionality_drives_variation_in_helping_as_a_function_of_group_membership"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
+<li><p>Dos Santos, M., <strong>Placì, S.</strong>, &amp; Wedekind, C.
+(2015). Stochasticity in economic losses increases the value of
+reputation in indirect reciprocity. <font style="color:grey;">Scientific
+Reports.</font> <a
+href="https://www.researchgate.net/publication/286897806_Stochasticity_in_economic_losses_increases_the_value_of_reputation_in_indirect_reciprocity"><img src="images/home/Lit_pdf_icon.PNG"></a></p></li>
 </ul>
 </div>
 
